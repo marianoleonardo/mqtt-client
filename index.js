@@ -1,8 +1,7 @@
 var mqtt = require('mqtt')
 var options = {
   port: '1883',
-  //clientId: 'admin',
-  username: 'admin',
+  username: 'admin:8a067e',
   password: '8a067e',
 };
 var client  = mqtt.connect('mqqt://10.211.8.219', options)
@@ -11,7 +10,7 @@ console.log('inicio do programa');
 
 client.on('connect', function () {
   console.log('conectou');
-  client.subscribe('admin:8a067e/attrs');
+  client.subscribe('admin:8a067e/config');
 
   setInterval(function() {
     valor = getRandomArbitrary(1, 100);
